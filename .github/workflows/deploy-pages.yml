@@ -31,6 +31,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Build static site
         run: pnpm build:pages
       - name: Upload static artifact
