@@ -1,0 +1,50 @@
+/*
+ * HALF / SPLIT style reminder: the full-viewport canvas is a sharp two-field game board with
+ * Signal Lime and Vermilion choice areas, a charcoal fate line, and an editorial record band.
+ */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  color-scheme: dark;
+  background: #11110f;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #11110f;
+}
+
+body {
+  color: #f6f0e2;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+canvas:focus-visible {
+  outline: 3px solid #11110f !important;
+  outline-offset: -8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
