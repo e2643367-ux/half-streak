@@ -1,0 +1,70 @@
+:root {
+    --ink: rgb(17, 17, 15);
+    --paper: rgb(246, 240, 226);
+    --lime: rgb(217, 255, 54);
+    --vermilion: rgb(240, 73, 51);
+}
+
+.game-root { flex-grow: 1; background-color: var(--paper); color: var(--ink); }
+.record-band { height: 96px; flex-direction: row; align-items: center; justify-content: space-between; background-color: var(--ink); padding-left: 36px; padding-right: 36px; }
+.brand-lockup { flex-direction: row; align-items: center; min-width: 270px; }
+.coin-mark { width: 46px; height: 46px; border-radius: 23px; overflow: hidden; position: relative; background-color: var(--lime); margin-right: 14px; }
+.coin-lime { position: absolute; left: 0; top: 0; width: 50%; height: 100%; background-color: var(--lime); }
+.coin-vermilion { position: absolute; right: 0; top: 0; width: 50%; height: 100%; background-color: var(--vermilion); }
+.coin-split { position: absolute; left: 21px; top: 0; width: 4px; height: 100%; background-color: var(--ink); }
+.wordmark { color: var(--paper); font-size: 22px; -unity-font-style: bold; letter-spacing: 1px; }
+.streak-value { align-items: center; justify-content: center; flex-grow: 1; }
+.streak-number { color: var(--paper); font-size: 45px; -unity-font-style: bold; -unity-text-align: middle-center; line-height: 42px; }
+.record-caption { color: rgb(163, 158, 147); font-size: 10px; letter-spacing: 2px; -unity-text-align: middle-center; }
+.best-value { min-width: 150px; flex-direction: row; align-items: baseline; justify-content: flex-end; }
+.best-caption { margin-right: 10px; }
+.best-number { color: var(--paper); font-size: 24px; -unity-font-style: bold; }
+.playfield { flex-grow: 1; position: relative; flex-direction: row; min-height: 300px; }
+.choice-field { flex-grow: 1; width: 50%; height: 100%; border-radius: 0; border-width: 0; padding: 0; margin: 0; align-items: center; justify-content: center; transition-property: background-color, scale; transition-duration: 0.14s; }
+.choice-field .unity-text-element { display: none; }
+.left-field { background-color: var(--lime); }
+.right-field { background-color: var(--vermilion); }
+.choice-field:hover { scale: 1.012 1.012; }
+.choice-field:active, .choice-field.is-selected { scale: 0.985 0.985; }
+.choice-label { color: var(--ink); font-size: 116px; -unity-font-style: bold; -unity-text-align: middle-center; }
+.key-hint { color: rgba(17,17,15,0.72); font-size: 15px; letter-spacing: 2px; margin-top: 10px; -unity-text-align: middle-center; }
+.fate-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 6px; translate: -3px 0; background-color: var(--ink); }
+.center-copy { position: absolute; left: 25%; right: 25%; top: 0; bottom: 0; align-items: center; justify-content: center; picking-mode: Ignore; }
+.status { background-color: rgba(246,240,226,0.92); padding: 9px 18px; margin-bottom: 18px; border-left-width: 4px; border-left-color: var(--ink); }
+.status Label { color: var(--ink); font-size: 15px; -unity-font-style: bold; -unity-text-align: middle-center; }
+.feedback { opacity: 0; min-height: 50px; justify-content: center; transition-property: opacity, scale; transition-duration: 0.12s; }
+.feedback.is-visible { opacity: 1; scale: 1.08 1.08; }
+.feedback Label { color: var(--ink); font-size: 52px; -unity-font-style: bold; -unity-text-align: middle-center; }
+.feedback.tier-one Label { font-size: 60px; }
+.feedback.tier-two Label { font-size: 70px; color: var(--paper); -unity-text-outline-width: 2px; -unity-text-outline-color: var(--ink); }
+.confetti-layer { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+.confetti-paper, .confetti-lime { position: absolute; width: 7px; height: 18px; background-color: var(--paper); rotate: 20deg; }
+.confetti-lime { background-color: var(--lime); }
+.lower-band { height: 58px; background-color: var(--paper); flex-direction: row; align-items: center; justify-content: space-between; padding-left: 36px; padding-right: 36px; }
+.streak-dots { flex-direction: row; min-width: 180px; }
+.streak-dot { color: rgba(17,17,15,0.28); font-size: 13px; margin-right: 6px; }
+.streak-dot.is-on { color: var(--ink); }
+.help-copy, .mode-copy { color: rgba(17,17,15,0.65); font-size: 12px; letter-spacing: 1px; }
+.mode-copy { letter-spacing: 2px; -unity-font-style: bold; }
+
+@media (max-width: 700px) {
+    .record-band { height: 78px; padding-left: 16px; padding-right: 16px; }
+    .brand-lockup { min-width: 0; }
+    .coin-mark { width: 34px; height: 34px; border-radius: 17px; margin-right: 8px; }
+    .coin-split { left: 15px; width: 3px; }
+    .wordmark { font-size: 14px; }
+    .streak-number { font-size: 34px; }
+    .best-value { min-width: 82px; }
+    .best-caption { display: none; }
+    .best-number { font-size: 18px; }
+    .choice-label { font-size: 82px; }
+    .key-hint { font-size: 11px; }
+    .fate-line { width: 4px; translate: -2px 0; }
+    .status Label { font-size: 11px; }
+    .feedback Label { font-size: 32px; }
+    .feedback.tier-one Label { font-size: 38px; }
+    .feedback.tier-two Label { font-size: 44px; }
+    .lower-band { height: 44px; padding-left: 14px; padding-right: 14px; }
+    .help-copy { font-size: 9px; }
+    .mode-copy { display: none; }
+}

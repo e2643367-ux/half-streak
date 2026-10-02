@@ -115,3 +115,16 @@ client/public/__manus__/version.json
 # Manus local development diagnostics (not part of public source)
 .manus-logs/
 client/public/__manus__/
+
+# Unity generated folders
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/MemoryCaptures/
+unity/*.csproj
+unity/*.sln
+unity/*.userprefs

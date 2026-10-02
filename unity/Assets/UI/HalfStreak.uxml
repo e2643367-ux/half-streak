@@ -1,0 +1,45 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="game-root" class="game-root">
+        <ui:VisualElement name="record-band" class="record-band">
+            <ui:VisualElement class="brand-lockup">
+                <ui:VisualElement class="coin-mark">
+                    <ui:VisualElement class="coin-lime" />
+                    <ui:VisualElement class="coin-vermilion" />
+                    <ui:VisualElement class="coin-split" />
+                </ui:VisualElement>
+                <ui:Label text="HALF / STREAK" class="wordmark" />
+            </ui:VisualElement>
+            <ui:VisualElement name="streak-value" class="streak-value">
+                <ui:Label name="streak-number" text="00" class="streak-number" />
+                <ui:Label text="CURRENT" class="record-caption" />
+            </ui:VisualElement>
+            <ui:VisualElement name="best-value" class="best-value">
+                <ui:Label text="BEST" class="record-caption best-caption" />
+                <ui:Label name="best-number" text="00" class="best-number" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="playfield" class="playfield">
+            <ui:Button name="left-choice" class="choice-field left-field" text="">
+                <ui:Label text="左" class="choice-label" />
+                <ui:Label text="A  /  ←" class="key-hint" />
+            </ui:Button>
+            <ui:Button name="right-choice" class="choice-field right-field" text="">
+                <ui:Label text="右" class="choice-label" />
+                <ui:Label text="D  /  →" class="key-hint" />
+            </ui:Button>
+            <ui:VisualElement name="fate-line" class="fate-line" />
+            <ui:VisualElement name="center-copy" class="center-copy">
+                <ui:VisualElement name="status" class="status"><ui:Label name="status-copy" text="どちらを選ぶ？" /></ui:VisualElement>
+                <ui:VisualElement name="feedback" class="feedback"><ui:Label name="feedback-copy" text="" /></ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="confetti-layer" class="confetti-layer" picking-mode="Ignore" />
+        </ui:VisualElement>
+
+        <ui:VisualElement class="lower-band">
+            <ui:VisualElement name="streak-dots" class="streak-dots" />
+            <ui:Label text="クリックでも選べる　／　左右キー・A・D" class="help-copy" />
+            <ui:Label text="HALF / SPLIT" class="mode-copy" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
