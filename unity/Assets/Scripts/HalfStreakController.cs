@@ -32,6 +32,7 @@ namespace HalfStreak
         private Coroutine confettiRoutine;
         private Action leftHandler;
         private Action rightHandler;
+        private bool initialized;
 
         private enum Choice { Left, Right }
         private enum Phase { Playing, Failed }
@@ -39,7 +40,18 @@ namespace HalfStreak
         private void Awake()
         {
             if (document == null) document = GetComponent<UIDocument>();
+        }
+
+        private IEnumerator Start()
+        {
+            // UIDocumentのvisualTreeAssetが実体化されるフレームまで待つ。
+            yield return null;
             root = document.rootVisualElement;
+            while (root == null || root.Q<Button>("left-choice") == null)
+            {
+                yield return null;
+                root = document.rootVisualElement;
+            }
             leftButton = root.Q<Button>("left-choice");
             rightButton = root.Q<Button>("right-choice");
             // left-field/right-field are USS classes, not UXML names. Reuse the buttons as fields.
@@ -66,6 +78,7 @@ namespace HalfStreak
             rightButton.clicked += rightHandler;
             best = PlayerPrefs.GetInt(BestKey, 0);
             streak = 0;
+            initialized = true;
             BeginRound(false);
         }
 
@@ -77,6 +90,7 @@ namespace HalfStreak
 
         private void Update()
         {
+            if (!initialized) return;
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) Choose(Choice.Left);
             if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) Choose(Choice.Right);
         }

@@ -21,8 +21,15 @@ namespace HalfStreak
             GameObject host = new GameObject("HALF STREAK UI");
             Object.DontDestroyOnLoad(host);
             UIDocument document = host.AddComponent<UIDocument>();
+            PanelSettings panelSettings = ScriptableObject.CreateInstance<PanelSettings>();
+            panelSettings.scaleMode = PanelScaleMode.ScaleWithScreenSize;
+            panelSettings.referenceResolution = new Vector2Int(1920, 1080);
+            document.panelSettings = panelSettings;
+            document.enabled = false;
             document.visualTreeAsset = layout;
-            if (style != null) document.rootVisualElement.styleSheets.Add(style);
+            document.enabled = true;
+            if (style != null && document.rootVisualElement != null)
+                document.rootVisualElement.styleSheets.Add(style);
             host.AddComponent<HalfStreakController>();
         }
     }
