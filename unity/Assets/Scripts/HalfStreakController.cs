@@ -40,16 +40,25 @@ namespace HalfStreak
         {
             if (document == null) document = GetComponent<UIDocument>();
             root = document.rootVisualElement;
-            leftField = root.Q<VisualElement>("left-field");
-            rightField = root.Q<VisualElement>("right-field");
+            leftButton = root.Q<Button>("left-choice");
+            rightButton = root.Q<Button>("right-choice");
+            // left-field/right-field are USS classes, not UXML names. Reuse the buttons as fields.
+            leftField = leftButton;
+            rightField = rightButton;
             feedback = root.Q<VisualElement>("feedback");
             status = root.Q<VisualElement>("status");
             streakValue = root.Q<VisualElement>("streak-value");
             bestValue = root.Q<VisualElement>("best-value");
             dots = root.Q<VisualElement>("streak-dots");
             confettiLayer = root.Q<VisualElement>("confetti-layer");
-            leftButton = root.Q<Button>("left-choice");
-            rightButton = root.Q<Button>("right-choice");
+
+            if (leftButton == null || rightButton == null || feedback == null || status == null ||
+                streakValue == null || bestValue == null || dots == null || confettiLayer == null)
+            {
+                Debug.LogError("HALF STREAK: HalfStreak.uxmlの必須要素が見つかりません。UXMLのname属性を確認してください。");
+                enabled = false;
+                return;
+            }
 
             leftHandler = () => Choose(Choice.Left);
             rightHandler = () => Choose(Choice.Right);
