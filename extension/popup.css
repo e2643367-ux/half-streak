@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font-family: "Noto Sans JP", system-ui, sans-serif; }
+body { width: 320px; margin: 0; color: #f4f0e8; background: #121212; }
+main { padding: 24px; border-top: 4px solid #d9ff36; }
+.brand { display: flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 800; letter-spacing: -.02em; }
+.mark { display: grid; place-items: center; width: 25px; height: 25px; color: #121212; background: #d9ff36; font-size: 14px; font-weight: 900; }
+.eyebrow { margin: 30px 0 8px; color: #a8a59e; font-size: 10px; font-weight: 800; letter-spacing: .16em; }
+h1 { margin: 0; font-size: 28px; letter-spacing: -.06em; }
+.description { margin: 12px 0 24px; color: #aaa69d; font-size: 12px; line-height: 1.7; }
+.toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; border-top: 1px solid #363632; border-bottom: 1px solid #363632; cursor: pointer; }
+.toggle-row span:first-child { display: flex; flex-direction: column; gap: 3px; }
+.toggle-row strong { font-size: 13px; }
+.toggle-row small { color: #d9ff36; font-size: 11px; }
+input { position: absolute; opacity: 0; }
+.switch { position: relative; width: 42px; height: 24px; background: #484842; transition: background .15s; }
+.switch::after { content: ""; position: absolute; top: 4px; left: 4px; width: 16px; height: 16px; background: #fff; transition: transform .15s; }
+input:checked + .switch { background: #d9ff36; }
+input:checked + .switch::after { transform: translateX(18px); background: #121212; }
+.notice { min-height: 16px; margin: 12px 0 0; color: #d9ff36; font-size: 11px; }
+.footnote { margin: 20px 0 0; color: #77756e; font-size: 10px; line-height: 1.6; }

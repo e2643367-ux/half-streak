@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||doubleclick.net/",
+      "resourceTypes": ["script", "xmlhttprequest", "sub_frame", "image", "media"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googleadservices.com/",
+      "resourceTypes": ["script", "xmlhttprequest", "sub_frame", "image"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googlesyndication.com/",
+      "resourceTypes": ["script", "xmlhttprequest", "sub_frame", "image"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "adunit|pagead|adsbygoogle|ad_break",
+      "domains": ["youtube.com", "www.youtube.com", "m.youtube.com"],
+      "resourceTypes": ["script", "xmlhttprequest", "sub_frame", "image", "media"]
+    }
+  }
+]

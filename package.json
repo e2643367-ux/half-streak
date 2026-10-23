@@ -10,7 +10,8 @@
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build:extension": "rm -rf dist-extension && cp -R extension dist-extension && cd dist-extension && zip -qr ../cleantube-extension.zip ."
   },
   "dependencies": {
     "@babylonjs/core": "^9.22.2",

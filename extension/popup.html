@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CleanTube</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <div class="brand"><span class="mark">C</span><span>CleanTube</span></div>
+    <p class="eyebrow">YOUTUBE FILTER</p>
+    <h1>広告を止める。</h1>
+    <p class="description">広告リクエストと動画ページ内の広告枠をブロックします。</p>
+    <label class="toggle-row" for="enabled">
+      <span><strong>ブロッカー</strong><small id="status">有効</small></span>
+      <input id="enabled" type="checkbox" checked>
+      <span class="switch" aria-hidden="true"></span>
+    </label>
+    <p id="notice" class="notice" role="status"></p>
+    <p class="footnote">変更はYouTubeの再読み込み後に反映されます。</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

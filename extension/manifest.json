@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "CleanTube — YouTube Ad Blocker",
+  "version": "1.0.0",
+  "description": "YouTubeの広告リクエストと広告プレースホルダーを軽量にブロックします。",
+  "permissions": [
+    "declarativeNetRequestWithHostAccess",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.googlevideo.com/*",
+    "*://*.googleadservices.com/*",
+    "*://*.doubleclick.net/*",
+    "*://*.googlesyndication.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "CleanTube",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "youtube_ads",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
